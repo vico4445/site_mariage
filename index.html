@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Céline & Victor — Save the Date</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="flowers" aria-hidden="true">
+    <!-- top-left -->
+    <svg class="flower flower--tl" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 280 Q95 200 90 150 Q85 100 100 50" stroke="#c8b89a" stroke-width="2" />
+      <path d="M95 160 Q70 140 50 120" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="48" cy="118" rx="8" ry="14" fill="#7a8c6e" opacity="0.7" transform="rotate(-20 48 118)" />
+      <path d="M92 130 Q115 110 130 90" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="132" cy="88" rx="7" ry="12" fill="#d4c4a0" opacity="0.8" transform="rotate(15 132 88)" />
+      <ellipse cx="100" cy="48" rx="10" ry="18" fill="#7a8c6e" opacity="0.6" />
+      <ellipse cx="90" cy="55" rx="7" ry="12" fill="#c8b89a" opacity="0.7" transform="rotate(-30 90 55)" />
+      <ellipse cx="110" cy="55" rx="7" ry="12" fill="#c8b89a" opacity="0.7" transform="rotate(30 110 55)" />
+    </svg>
+    <!-- top-right -->
+    <svg class="flower flower--tr" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 280 Q105 200 108 150 Q112 100 98 50" stroke="#c8b89a" stroke-width="2" />
+      <path d="M104 170 Q130 148 152 130" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="154" cy="128" rx="8" ry="13" fill="#d4c4a0" opacity="0.75" transform="rotate(20 154 128)" />
+      <path d="M106 135 Q85 115 68 95" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="66" cy="93" rx="7" ry="12" fill="#7a8c6e" opacity="0.7" transform="rotate(-15 66 93)" />
+      <ellipse cx="98" cy="48" rx="9" ry="17" fill="#c8b89a" opacity="0.65" />
+      <ellipse cx="88" cy="56" rx="6" ry="11" fill="#7a8c6e" opacity="0.6" transform="rotate(-25 88 56)" />
+      <ellipse cx="108" cy="54" rx="7" ry="12" fill="#d4c4a0" opacity="0.7" transform="rotate(25 108 54)" />
+    </svg>
+    <!-- bottom-left -->
+    <svg class="flower flower--bl" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 20 Q96 100 92 150 Q88 200 102 255" stroke="#c8b89a" stroke-width="2" />
+      <path d="M94 140 Q68 155 46 165" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="44" cy="166" rx="8" ry="14" fill="#7a8c6e" opacity="0.65" transform="rotate(10 44 166)" />
+      <path d="M96 175 Q118 188 138 205" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="140" cy="207" rx="7" ry="12" fill="#d4c4a0" opacity="0.8" transform="rotate(-20 140 207)" />
+      <ellipse cx="102" cy="257" rx="10" ry="16" fill="#7a8c6e" opacity="0.6" />
+      <ellipse cx="92" cy="250" rx="6" ry="11" fill="#c8b89a" opacity="0.7" transform="rotate(25 92 250)" />
+      <ellipse cx="113" cy="251" rx="7" ry="12" fill="#d4c4a0" opacity="0.65" transform="rotate(-30 113 251)" />
+    </svg>
+    <!-- bottom-right -->
+    <svg class="flower flower--br" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 20 Q103 100 106 150 Q110 200 97 255" stroke="#c8b89a" stroke-width="2" />
+      <path d="M104 145 Q128 160 150 172" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="152" cy="174" rx="8" ry="13" fill="#d4c4a0" opacity="0.75" transform="rotate(-10 152 174)" />
+      <path d="M102 180 Q80 195 60 208" stroke="#c8b89a" stroke-width="1.5" />
+      <ellipse cx="58" cy="210" rx="7" ry="12" fill="#7a8c6e" opacity="0.7" transform="rotate(15 58 210)" />
+      <ellipse cx="97" cy="257" rx="9" ry="17" fill="#c8b89a" opacity="0.6" />
+      <ellipse cx="87" cy="250" rx="6" ry="11" fill="#d4c4a0" opacity="0.65" transform="rotate(20 87 250)" />
+      <ellipse cx="108" cy="252" rx="7" ry="12" fill="#7a8c6e" opacity="0.6" transform="rotate(-25 108 252)" />
+    </svg>
+  </div>
+
+  <main class="card-wrapper">
+    <div class="message" id="message">
+      <p>Save the date</p>
+      <p class="names">Céline &amp; Victor</p>
+      <p>se marient le <strong>10 juillet 2027</strong></p>
+      <p>et vous convient à célébrer ce beau moment avec eux.</p>
+      <p class="soon">Plus d'infos à venir.</p>
+    </div>
+    <canvas id="scratch-canvas"></canvas>
+  </main>
+
+  <p class="hint" id="hint">Grattez pour découvrir ✦</p>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
