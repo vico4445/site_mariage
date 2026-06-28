@@ -21,7 +21,7 @@
       ctx.fillRect(x, y, 1, 1);
     }
 
-    ctx.fillStyle = 'rgba(74,64,53,0.6)';
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.font = `italic ${Math.floor(canvas.width / 18)}px 'Cormorant Garamond', serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
