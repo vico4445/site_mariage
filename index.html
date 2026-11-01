@@ -155,6 +155,52 @@
 
     <section class="section" id="rsvp">
       <h2 class="section-title">RSVP</h2>
+      <!-- À COMPLÉTER : date limite, proposition 1er avril 2027 -->
+      <p class="intro">Merci de nous répondre avant le <strong>1er avril 2027</strong>.</p>
+      <form id="rsvp-form" class="rsvp-form card">
+        <div class="field">
+          <label for="noms">Nom(s)</label>
+          <input type="text" id="noms" name="noms" required autocomplete="name" />
+        </div>
+
+        <fieldset class="field">
+          <legend>Serez-vous présent·e·s ?</legend>
+          <label><input type="radio" id="presence-oui" name="presence" value="oui" required /> Oui, avec joie</label>
+          <label><input type="radio" id="presence-non" name="presence" value="non" /> Non, malheureusement</label>
+        </fieldset>
+
+        <fieldset class="si-present">
+          <div class="field-row">
+            <div class="field">
+              <label for="adultes">Adultes</label>
+              <input type="number" id="adultes" name="adultes" min="1" value="1" />
+            </div>
+            <div class="field">
+              <label for="enfants">Enfants</label>
+              <input type="number" id="enfants" name="enfants" min="0" value="0" />
+            </div>
+          </div>
+
+          <fieldset class="field">
+            <legend>Serez-vous là au brunch du dimanche ?</legend>
+            <label><input type="radio" name="brunch" value="oui" /> Oui</label>
+            <label><input type="radio" name="brunch" value="non" /> Non</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="regimes">Régimes alimentaires / allergies</label>
+            <textarea id="regimes" name="regimes" rows="2"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="message">Un petit mot pour les mariés</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+
+        <p class="center"><button type="submit" class="btn">Envoyer</button></p>
+        <p class="rsvp-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
 
     <div class="ornament" aria-hidden="true"></div>
