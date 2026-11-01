@@ -33,3 +33,10 @@ test('champs vides non envoyés', () => {
   assert.strictEqual(p.has('entry.7'), false);
   assert.strictEqual(p.get('entry.4'), '0');
 });
+
+test('isConfigured: faux tant que des placeholders restent', () => {
+  const { isConfigured } = require('./rsvp.js');
+  assert.strictEqual(isConfigured(config), true);
+  assert.strictEqual(isConfigured({ url: 'À_REMPLIR', entries: config.entries }), false);
+  assert.strictEqual(isConfigured({ url: 'x', entries: { ...config.entries, noms: 'entry.À_REMPLIR' } }), false);
+});

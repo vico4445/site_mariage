@@ -12,6 +12,8 @@
   --sage: #7a8c6e;
   --beige: #c8b89a;
   --gold: #d4c4a0;
+  --sage-text: #5e6f53; /* sauge foncée pour le texte : AA sur --bg */
+  --field-border: #9c8b6e; /* bordure de champ : 3:1 sur --card */
   --nav-h: 3.25rem;
 }
 
@@ -29,7 +31,7 @@ body {
 }
 
 a {
-  color: var(--sage);
+  color: var(--sage-text);
 }
 
 :focus-visible {
@@ -62,7 +64,7 @@ a {
 }
 
 .nav a:hover {
-  color: var(--sage);
+  color: var(--sage-text);
 }
 
 /* Accueil */
@@ -193,10 +195,10 @@ a {
 .btn {
   display: inline-block;
   padding: 0.6rem 1.75rem;
-  border: 1px solid var(--sage);
+  border: 1px solid var(--sage-text);
   border-radius: 999px;
   background: transparent;
-  color: var(--sage);
+  color: var(--sage-text);
   font: inherit;
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -206,7 +208,7 @@ a {
 
 .btn:hover,
 .btn:focus-visible {
-  background: var(--sage);
+  background: var(--sage-text);
   color: var(--card);
 }
 
@@ -344,7 +346,7 @@ fieldset.field label {
   width: 100%;
   padding: 0.5rem 0.75rem;
   background: var(--card);
-  border: 1px solid var(--beige);
+  border: 1px solid var(--field-border);
   border-radius: 8px;
   color: var(--text);
   font: inherit;
