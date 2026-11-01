@@ -1,17 +1,17 @@
 // Envoi du RSVP vers un Google Form (voir docs/google-form.md pour remplir CONFIG).
 const CONFIG = {
-  url: 'À_REMPLIR',
+  url: 'https://docs.google.com/forms/d/e/1FAIpQLSdvLLjecRvGBv4Dml2eTaStMl9FKc4WxHiwSEW_dQ9K32sRGQ/formResponse',
   entries: {
-    noms: 'entry.À_REMPLIR',
-    presence: 'entry.À_REMPLIR',
-    adultes: 'entry.À_REMPLIR',
-    enfants: 'entry.À_REMPLIR',
-    brunch: 'entry.À_REMPLIR',
-    regimes: 'entry.À_REMPLIR',
-    message: 'entry.À_REMPLIR',
+    noms: 'entry.400830446',
+    presence: 'entry.1974946621',
+    adultes: 'entry.1208827363',
+    enfants: 'entry.952328994',
+    brunch: 'entry.276555456',
+    regimes: 'entry.638719467',
+    message: 'entry.1221664846',
   },
 };
-const CONTACT_EMAIL = 'À_REMPLIR';
+const CONTACT_EMAIL = 'qb5shwi3x@mozmail.com'; // alias Firefox Relay (transfert vers la boîte des mariés)
 
 const SI_PRESENT = ['adultes', 'enfants', 'brunch', 'regimes'];
 const LIBELLES = { oui: 'Oui', non: 'Non' }; // casse exacte des choix du Google Form
@@ -45,7 +45,8 @@ if (typeof document !== 'undefined') {
   });
 
   const echec = () => {
-    status.textContent = "Oups, l'envoi a échoué. Réessayez, ou écrivez-nous à " + CONTACT_EMAIL + '.';
+    status.textContent = "Oups, l'envoi a échoué. Réessayez, ou écrivez-nous à " + CONTACT_EMAIL +
+      " (oui, l'adresse est un peu étrange : c'est un alias anti-spam, votre message nous parviendra bien).";
     button.disabled = false;
   };
 
