@@ -309,3 +309,69 @@ a {
   margin-top: 0.5rem;
   color: var(--text-soft);
 }
+
+/* RSVP */
+.rsvp-form fieldset {
+  border: 0;
+}
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.field > label,
+.field legend {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+fieldset.field label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 1.5rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rsvp-form input[type="text"],
+.rsvp-form input[type="number"],
+.rsvp-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: var(--card);
+  border: 1px solid var(--beige);
+  border-radius: 8px;
+  color: var(--text);
+  font: inherit;
+}
+
+.rsvp-form input:focus,
+.rsvp-form textarea:focus {
+  outline: 2px solid var(--sage);
+  outline-offset: 0;
+  border-color: var(--sage);
+}
+
+.rsvp-form input[type="radio"] {
+  accent-color: var(--sage);
+}
+
+/* ponytail: sans :has() (Firefox < 121), les champs restent visibles ; rsvp.js ignore leurs valeurs si « Non » */
+.rsvp-form:has(#presence-non:checked) .si-present {
+  display: none;
+}
+
+.rsvp-status {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.rsvp-status:empty {
+  display: none;
+}
