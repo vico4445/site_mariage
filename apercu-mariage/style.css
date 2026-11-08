@@ -386,3 +386,13 @@ fieldset.field label {
 .rsvp-status:empty {
   display: none;
 }
+
+/* Photo en tête de carte */
+.card-img {
+  display: block;
+  width: calc(100% + 3rem);
+  margin: -1.75rem -1.5rem 1.25rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
