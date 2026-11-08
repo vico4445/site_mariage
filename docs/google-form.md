@@ -4,7 +4,7 @@ Le formulaire du site envoie les réponses à un Google Form, qui les range dans
 
 ## 1. Créer le Google Form
 
-Sur <https://forms.google.com>, créer un formulaire avec **7 questions, dans cet ordre** :
+Sur <https://forms.google.com>, créer un formulaire avec **10 questions, dans cet ordre** :
 
 | # | Question | Type | Choix |
 |---|---|---|---|
@@ -15,6 +15,9 @@ Sur <https://forms.google.com>, créer un formulaire avec **7 questions, dans ce
 | 5 | Brunch | Choix multiples | `Oui` / `Non` (casse exacte) |
 | 6 | Régimes | Paragraphe | |
 | 7 | Message | Paragraphe | |
+| 8 | Invités | Paragraphe | |
+| 9 | Navette | Choix multiples | `Oui` / `Peut-être` / `Non` (casse exacte) |
+| 10 | Chanson | Réponse courte | |
 
 **Aucune question obligatoire** côté Google : le site vérifie déjà la saisie, et une réponse « Non » laisse volontairement des champs vides.
 
@@ -36,7 +39,7 @@ En haut de `rsvp.js` :
 
 - `url` : l'URL du lien ci-dessus, **jusqu'à `/viewform` exclu**, suivie de `/formResponse`.
   Ex. `https://docs.google.com/forms/d/e/XXXX/formResponse`
-- `entries` : les 7 `entry.NNN`, chacun en face de son champ (`noms`, `presence`, `adultes`, `enfants`, `brunch`, `regimes`, `message`).
+- `entries` : les 10 `entry.NNN`, chacun en face de son champ (`noms`, `presence`, `adultes`, `enfants`, `brunch`, `regimes`, `message`, `invites`, `navette`, `chanson`). Un `entry` laissé à `''` n'est simplement pas envoyé.
 - `CONTACT_EMAIL` : l'adresse affichée si l'envoi échoue.
 
 ## 5. Tester avant de diffuser le lien

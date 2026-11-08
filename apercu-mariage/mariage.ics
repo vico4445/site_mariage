@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Celine et Victor//Mariage//FR
+BEGIN:VEVENT
+UID:mariage-celine-victor-20270710@vico4445.github.io
+DTSTAMP:20261108T120000Z
+DTSTART:20270710T123000Z
+DTEND:20270711T020000Z
+SUMMARY:Mariage de Céline & Victor
+LOCATION:Château Peixotto\, Talence puis Château du Haut-Nouchet\, Martil
+ lac
+DESCRIPTION:14h30 mariage civil au château Peixotto (Talence)\, puis cér
+ émonie\, cocktail\, dîner et soirée au château du Haut-Nouchet (Martil
+ lac). Brunch le dimanche 11 à 11h.
+END:VEVENT
+END:VCALENDAR

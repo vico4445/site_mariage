@@ -9,20 +9,23 @@ const CONFIG = {
     brunch: 'entry.276555456',
     regimes: 'entry.638719467',
     message: 'entry.1221664846',
+    invites: '', // À AJOUTER au Google Form : « Invités » (Paragraphe) ; '' = champ pas encore envoyé
+    navette: '', // « Navette » (Choix multiples : Oui / Peut-être / Non)
+    chanson: '', // « Chanson » (Réponse courte)
   },
 };
 const CONTACT_EMAIL = 'qb5shwi3x@mozmail.com'; // alias Firefox Relay (transfert vers la boîte des mariés)
 
-const SI_PRESENT = ['adultes', 'enfants', 'brunch', 'regimes'];
-const LIBELLES = { oui: 'Oui', non: 'Non' }; // casse exacte des choix du Google Form
+const SI_PRESENT = ['adultes', 'enfants', 'invites', 'brunch', 'navette', 'regimes', 'chanson'];
+const LIBELLES = { oui: 'Oui', non: 'Non', 'peut-etre': 'Peut-être' }; // casse exacte des choix du Google Form
 
 function buildPayload(values, config) {
   const body = new URLSearchParams();
   for (const [champ, entry] of Object.entries(config.entries)) {
     const v = (values[champ] || '').trim();
-    if (!v) continue;
+    if (!entry || !v) continue;
     if (values.presence === 'non' && SI_PRESENT.includes(champ)) continue;
-    body.append(entry, champ === 'presence' || champ === 'brunch' ? LIBELLES[v] || v : v);
+    body.append(entry, ['presence', 'brunch', 'navette'].includes(champ) ? LIBELLES[v] || v : v);
   }
   return body;
 }
@@ -63,7 +66,8 @@ if (typeof document !== 'undefined') {
       .then(() => {
         const merci = document.createElement('p');
         merci.className = 'rsvp-status';
-        merci.textContent = 'Merci ! Votre réponse a bien été envoyée ♡';
+        merci.innerHTML = 'Merci ! Votre réponse a bien été envoyée ♡<br />' +
+          'Un changement ? Renvoyez simplement le formulaire, nous garderons votre dernière réponse.';
         form.replaceWith(merci);
       })
       .catch(echec);

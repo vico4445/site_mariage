@@ -6,16 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Céline & Victor — 10 juillet 2027</title>
   <meta name="description" content="Mariage de Céline & Victor, 10 juillet 2027, Talence & Martillac" />
+  <meta property="og:title" content="Céline &amp; Victor — 10 juillet 2027" />
+  <meta property="og:description" content="Programme, lieux, hébergement et RSVP de notre mariage." />
+  <!-- ponytail: URL absolue de l'emplacement final (racine), valide après le lancement -->
+  <meta property="og:image" content="https://vico4445.github.io/site_mariage/photos/a-deux.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%237a8c6e'>♡</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
 
   <nav class="nav" aria-label="Sections">
     <a href="#programme">Programme</a>
     <a href="#lieux">Lieux</a>
-    <a href="#hebergement">Hébergement</a>
+    <a href="#hebergement">Hôtel</a>
     <a href="#rsvp">RSVP</a>
     <a href="#voyage">Voyage</a>
     <a href="#faq">FAQ</a>
@@ -70,8 +76,8 @@
     </div>
     <div class="hero-content">
       <div class="polas">
-        <figure class="pola"><img src="photos/a-deux.jpg" alt="Céline et Victor" /></figure>
-        <figure class="pola"><img src="photos/a-trois.jpg" alt="Céline, Victor et leur fille" /></figure>
+        <figure class="pola"><img src="photos/a-deux.jpg" width="600" height="902" alt="Céline et Victor" /></figure>
+        <figure class="pola"><img src="photos/a-trois.jpg" width="600" height="807" alt="Céline, Victor et leur fille" /></figure>
       </div>
       <p class="names">Céline &amp; Victor</p>
       <p class="hero-date">10 juillet 2027</p>
@@ -108,6 +114,7 @@
           <p>Château du Haut-Nouchet</p>
         </li>
       </ol>
+      <p class="center"><a class="btn" href="mariage.ics" download>Ajouter au calendrier</a></p>
     </section>
 
     <div class="ornament" aria-hidden="true"></div>
@@ -116,7 +123,7 @@
       <h2 class="section-title">Lieux &amp; accès</h2>
       <div class="cards">
         <article class="card">
-          <img class="card-img" src="photos/peixotto.jpg" alt="Façade du château Peixotto" loading="lazy" />
+          <img class="card-img" src="photos/peixotto.jpg" width="1200" height="578" alt="Façade du château Peixotto" loading="lazy" />
           <h3>Château Peixotto</h3>
           <p>Mariage civil à 14h30</p>
           <p class="address">Parc Peixotto, Talence (33400)</p>
@@ -124,7 +131,7 @@
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau%20Peixotto%20Talence">Itinéraire</a>
         </article>
         <article class="card">
-          <img class="card-img" src="photos/haut-nouchet.jpg" alt="Le château du Haut-Nouchet et son parc" loading="lazy" />
+          <img class="card-img" src="photos/haut-nouchet.jpg" width="960" height="640" alt="Le château du Haut-Nouchet et son parc" loading="lazy" />
           <h3>Château du Haut-Nouchet</h3>
           <p>Cérémonie, cocktail, dîner &amp; soirée</p>
           <p class="address">Chemin la Tour, Martillac (33650)</p>
@@ -136,7 +143,6 @@
         <h3>Accès</h3>
         <p><strong>En train :</strong> gare de Bordeaux Saint-Jean, puis voiture ou taxi (environ 25 min jusqu'au château).</p>
         <p><strong>En voiture :</strong> comptez environ 20 minutes entre le château Peixotto (Talence) et le Haut-Nouchet.</p>
-        <p><strong>Parking :</strong> à l'entrée du Château du Haut-Nouchet ; à Talence, parking de la mairie ou rues adjacentes.</p>
       </div>
     </section>
 
@@ -145,7 +151,7 @@
     <section class="section" id="hebergement">
       <h2 class="section-title">Hébergement</h2>
       <article class="card">
-        <img class="card-img" src="photos/akena.jpg" alt="Entrée de l'hôtel Akena La Brède" loading="lazy" />
+        <img class="card-img" src="photos/akena.jpg" width="1200" height="808" alt="Entrée de l'hôtel Akena La Brède" loading="lazy" />
         <h3>Akena Hôtel La Brède</h3>
         <p>À 6 minutes en voiture du château.</p>
         <p><strong>85 € la nuit</strong> (petit-déjeuner non inclus) en précisant que vous venez pour le mariage de Céline &amp; Victor.</p>
@@ -187,15 +193,32 @@
             </div>
           </div>
 
+          <div class="field">
+            <label for="invites">Prénom et nom de chaque personne</label>
+            <textarea id="invites" name="invites" rows="3" required placeholder="Une personne par ligne, avec l'âge pour les enfants. Ex. : Léo Dupont (5 ans)"></textarea>
+          </div>
+
           <fieldset class="field">
             <legend>Serez-vous là au brunch du dimanche ?</legend>
-            <label><input type="radio" name="brunch" value="oui" /> Oui</label>
+            <label><input type="radio" name="brunch" value="oui" required /> Oui</label>
             <label><input type="radio" name="brunch" value="non" /> Non</label>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Pensez-vous prendre la navette retour vers l'Akena ? <small>(facultatif, sans engagement)</small></legend>
+            <label><input type="radio" name="navette" value="oui" /> Oui</label>
+            <label><input type="radio" name="navette" value="peut-etre" /> Peut-être</label>
+            <label><input type="radio" name="navette" value="non" /> Non</label>
           </fieldset>
 
           <div class="field">
             <label for="regimes">Régimes alimentaires / allergies</label>
             <textarea id="regimes" name="regimes" rows="2"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="chanson">La chanson qui vous fera danser à coup sûr</label>
+            <input type="text" id="chanson" name="chanson" />
           </div>
         </fieldset>
 
@@ -215,7 +238,7 @@
       <h2 class="section-title">Voyage de noces</h2>
       <p class="intro">Votre présence est notre plus beau cadeau. Si vous souhaitez nous gâter un peu plus, une cagnotte est ouverte pour notre voyage de noces.</p>
       <article class="card">
-        <img class="card-img" src="photos/grece.jpg" alt="Village blanc au bord de la mer en Grèce" loading="lazy" />
+        <img class="card-img" src="photos/grece.jpg" width="1090" height="908" alt="Village blanc au bord de la mer en Grèce" loading="lazy" />
         <h3>Direction la Grèce</h3>
         <p>Soleil, mer turquoise et petites criques : nous partirons découvrir la Grèce en famille, avec Zoé, 2 ans et demi, dans nos bagages.</p>
       </article>
