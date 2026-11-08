@@ -432,3 +432,13 @@ fieldset.field label {
   object-fit: cover;
   border-radius: 16px 16px 0 0;
 }
+
+/* Cagnotte */
+.cagnotte {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.cagnotte .btn + p {
+  margin-top: 1.5rem;
+}
