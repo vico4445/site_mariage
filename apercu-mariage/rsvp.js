@@ -9,9 +9,9 @@ const CONFIG = {
     brunch: 'entry.276555456',
     regimes: 'entry.638719467',
     message: 'entry.1221664846',
-    invites: '', // À AJOUTER au Google Form : « Invités » (Paragraphe) ; '' = champ pas encore envoyé
-    navette: '', // « Navette » (Choix multiples : Oui / Peut-être / Non)
-    chanson: '', // « Chanson » (Réponse courte)
+    invites: 'entry.1462656197',
+    navette: 'entry.995256096',
+    chanson: 'entry.329415852',
   },
 };
 const CONTACT_EMAIL = 'qb5shwi3x@mozmail.com'; // alias Firefox Relay (transfert vers la boîte des mariés)
