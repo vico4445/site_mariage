@@ -51,3 +51,10 @@ test('navette (peut-être), chanson ; entry vide = ignoré', () => {
   const non = buildPayload({ noms: 'Paul', presence: 'non', navette: 'oui', chanson: 'X' }, cfg);
   assert.strictEqual(non.has('entry.9'), false);
 });
+
+test('compterInvites: âge = enfant, lignes vides ignorées', () => {
+  const { compterInvites } = require('./rsvp.js');
+  assert.deepStrictEqual(compterInvites('Jean Dupont\n\nMarie Dupont\nLéo (5 ans)\nZoé 1 an\nBébé (18 mois)\n'),
+    { adultes: 2, enfants: 3 });
+  assert.deepStrictEqual(compterInvites(''), { adultes: 0, enfants: 0 });
+});

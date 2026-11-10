@@ -29,17 +29,32 @@ function buildPayload(values, config) {
   return body;
 }
 
+// Une ligne = une personne ; une ligne avec un âge (« 5 ans », « 1 an », « 18 mois ») = un enfant.
+function compterInvites(texte) {
+  const lignes = texte.split('\n').filter((l) => l.trim());
+  const enfants = lignes.filter((l) => /\d+\s*(ans?|mois)\b/i.test(l)).length;
+  return { adultes: lignes.length - enfants, enfants };
+}
+
 function isConfigured(config) {
   return ![config.url, ...Object.values(config.entries)].some((v) => v.includes('À_REMPLIR'));
 }
 
-if (typeof module !== 'undefined') module.exports = { buildPayload, isConfigured };
+if (typeof module !== 'undefined') module.exports = { buildPayload, isConfigured, compterInvites };
 
 if (typeof document !== 'undefined') {
   const form = document.getElementById('rsvp-form');
   const button = form.querySelector('button[type="submit"]');
   const status = form.querySelector('.rsvp-status');
   const siPresent = form.querySelector('.si-present');
+
+  // Préremplit les compteurs depuis la liste ; ils restent modifiables à la main.
+  form.noms.addEventListener('input', () => {
+    const { adultes, enfants } = compterInvites(form.noms.value);
+    if (adultes + enfants === 0) return;
+    form.adultes.value = adultes;
+    form.enfants.value = enfants;
+  });
 
   // Un fieldset désactivé échappe à la validation : un champ masqué invalide ne bloque plus un « Non ».
   form.addEventListener('change', () => {
