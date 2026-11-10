@@ -9,14 +9,13 @@ const CONFIG = {
     brunch: 'entry.276555456',
     regimes: 'entry.638719467',
     message: 'entry.1221664846',
-    invites: 'entry.1462656197',
     navette: 'entry.995256096',
     chanson: 'entry.329415852',
   },
 };
 const CONTACT_EMAIL = 'qb5shwi3x@mozmail.com'; // alias Firefox Relay (transfert vers la boîte des mariés)
 
-const SI_PRESENT = ['adultes', 'enfants', 'invites', 'brunch', 'navette', 'regimes', 'chanson'];
+const SI_PRESENT = ['adultes', 'enfants', 'brunch', 'navette', 'regimes', 'chanson'];
 const LIBELLES = { oui: 'Oui', non: 'Non', 'peut-etre': 'Peut-être' }; // casse exacte des choix du Google Form
 
 function buildPayload(values, config) {

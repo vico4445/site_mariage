@@ -15,7 +15,7 @@ Sur <https://forms.google.com>, créer un formulaire avec **10 questions, dans c
 | 5 | Brunch | Choix multiples | `Oui` / `Non` (casse exacte) |
 | 6 | Régimes | Paragraphe | |
 | 7 | Message | Paragraphe | |
-| 8 | Invités | Paragraphe | |
+| 8 | Invités | Paragraphe | (plus utilisé : la liste des personnes va dans Nom(s)) |
 | 9 | Navette | Choix multiples | `Oui` / `Peut-être` / `Non` (casse exacte) |
 | 10 | Chanson | Réponse courte | |
 
@@ -39,7 +39,7 @@ En haut de `rsvp.js` :
 
 - `url` : l'URL du lien ci-dessus, **jusqu'à `/viewform` exclu**, suivie de `/formResponse`.
   Ex. `https://docs.google.com/forms/d/e/XXXX/formResponse`
-- `entries` : les 10 `entry.NNN`, chacun en face de son champ (`noms`, `presence`, `adultes`, `enfants`, `brunch`, `regimes`, `message`, `invites`, `navette`, `chanson`). Un `entry` laissé à `''` n'est simplement pas envoyé.
+- `entries` : les 9 `entry.NNN`, chacun en face de son champ (`noms`, `presence`, `adultes`, `enfants`, `brunch`, `regimes`, `message`, `navette`, `chanson`). Un `entry` laissé à `''` n'est simplement pas envoyé.
 - `CONTACT_EMAIL` : l'adresse affichée si l'envoi échoue.
 
 ## 5. Tester avant de diffuser le lien

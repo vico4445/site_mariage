@@ -41,13 +41,13 @@ test('isConfigured: faux tant que des placeholders restent', () => {
   assert.strictEqual(isConfigured({ url: 'x', entries: { ...config.entries, noms: 'entry.À_REMPLIR' } }), false);
 });
 
-test('nouveaux champs: invités, navette (peut-être), chanson ; entry vide = ignoré', () => {
-  const cfg = { url: 'x', entries: { ...config.entries, invites: 'entry.8', navette: 'entry.9', chanson: '' } };
-  const p = buildPayload({ noms: 'Jean', presence: 'oui', invites: 'Jean Dupont\nLéo Dupont (5 ans)',
+test('navette (peut-être), chanson ; entry vide = ignoré', () => {
+  const cfg = { url: 'x', entries: { ...config.entries, navette: 'entry.9', chanson: '' } };
+  const p = buildPayload({ noms: 'Jean Dupont\nLéo Dupont (5 ans)', presence: 'oui',
     navette: 'peut-etre', chanson: 'Africa' }, cfg);
-  assert.strictEqual(p.get('entry.8'), 'Jean Dupont\nLéo Dupont (5 ans)');
+  assert.strictEqual(p.get('entry.1'), 'Jean Dupont\nLéo Dupont (5 ans)');
   assert.strictEqual(p.get('entry.9'), 'Peut-être');
   assert.strictEqual([...p.keys()].includes(''), false);
-  const non = buildPayload({ noms: 'Paul', presence: 'non', invites: 'Paul', navette: 'oui', chanson: 'X' }, cfg);
-  assert.strictEqual(non.has('entry.8') || non.has('entry.9'), false);
+  const non = buildPayload({ noms: 'Paul', presence: 'non', navette: 'oui', chanson: 'X' }, cfg);
+  assert.strictEqual(non.has('entry.9'), false);
 });

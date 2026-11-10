@@ -171,8 +171,8 @@
       <p class="intro">Merci de nous répondre avant le <strong>1er avril 2027</strong>.</p>
       <form id="rsvp-form" class="rsvp-form card">
         <div class="field">
-          <label for="noms">Nom(s)</label>
-          <input type="text" id="noms" name="noms" required autocomplete="name" />
+          <label for="noms">Prénom et nom de chaque personne</label>
+          <textarea id="noms" name="noms" rows="3" required placeholder="Une personne par ligne, avec l'âge pour les enfants. Ex. : Léo Dupont (5 ans)"></textarea>
         </div>
 
         <fieldset class="field">
@@ -191,11 +191,6 @@
               <label for="enfants">Enfants</label>
               <input type="number" id="enfants" name="enfants" min="0" value="0" />
             </div>
-          </div>
-
-          <div class="field">
-            <label for="invites">Prénom et nom de chaque personne</label>
-            <textarea id="invites" name="invites" rows="3" required placeholder="Une personne par ligne, avec l'âge pour les enfants. Ex. : Léo Dupont (5 ans)"></textarea>
           </div>
 
           <fieldset class="field">
